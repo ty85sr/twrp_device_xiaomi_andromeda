@@ -1,0 +1,12 @@
+# Android fstab file.
+# The filesystem that contains the filesystem e2fsck binary (typically /system) cannot
+# specify 'check', and must come before any filesystems that do specify 'check'
+
+# NOTE: /vendor partition is early-mounted and the fstab entry is specified in device tree (duplicated below for recovery image purposes only):
+#       /proc/device-tree/firmware/android/fstab/vendor
+
+#<src>                                      <mnt_point>             <type>  <mnt_flags and options>                                                                           <fs_mgr_flags>
+/dev/block/by-name/metadata                  /metadata               ext4    noatime,nosuid,nodev,discard                                                                      wait,formattable,wrappedkey
+/dev/block/bootdevice/by-name/userdata       /data                   ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc                                                    latemount,wait,check,fileencryption=ice,wrappedkey,quota,reservedsize=128M
+/dev/block/bootdevice/by-name/userdata       /data                   f2fs    noatime,nosuid,nodev,discard,background_gc=sync,fsync_mode=nobarrier                              latemount,wait,check,fileencryption=ice,wrappedkey,quota,reservedsize=128M,formattable
+/dev/block/bootdevice/by-name/misc           /misc                   emmc    defaults                                                                                          defaults
