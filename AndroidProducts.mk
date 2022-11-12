@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_andromeda.mk
+    $(LOCAL_DIR)/twrp_andromeda.mk
