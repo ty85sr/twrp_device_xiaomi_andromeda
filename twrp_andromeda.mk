@@ -27,6 +27,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, device/xiaomi/andromeda/device.mk)
+
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := andromeda
 PRODUCT_NAME := twrp_andromeda

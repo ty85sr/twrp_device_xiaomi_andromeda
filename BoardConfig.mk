@@ -119,8 +119,11 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     android.hardware.vibrator-ndk_platform
 
 # Crypto
+BOARD_USES_QCOM_FBE_DECRYPTION := true
 TW_INCLUDE_CRYPTO := true
-TW_INCLUDE_FBE := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_RESETPROP := true
+TW_USE_FSCRYPT_POLICY := 1
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
