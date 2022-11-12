@@ -111,7 +111,13 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_RECOVERY_DEVICE_DIRS += $(DEVICE_PATH)
 
 TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.vibrator-ndk_platform
+    android.hardware.vibrator-ndk_platform \
+    libion \
+    libxml2
+
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
 # Crypto
 BOARD_USES_QCOM_FBE_DECRYPTION := true
