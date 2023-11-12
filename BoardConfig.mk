@@ -128,6 +128,8 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 TW_INCLUDE_RESETPROP := true
 TW_USE_FSCRYPT_POLICY := 1
 
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
 TW_FRAMERATE := 60
