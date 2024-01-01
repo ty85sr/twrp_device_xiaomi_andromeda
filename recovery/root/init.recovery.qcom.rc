@@ -34,6 +34,7 @@ on fs
 on init
     setprop prepdecrypt.setpatch true
     start qti.vibrator
+    start health-hal-2-1
 
 service qti.vibrator /system/bin/vendor.qti.hardware.vibrator.service
     user root
