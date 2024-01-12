@@ -15,4 +15,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_andromeda.mk
+    $(LOCAL_DIR)/omni_andromeda.mk
+
+COMMON_LUNCH_CHOICES := \
+    omni_andromeda-eng
